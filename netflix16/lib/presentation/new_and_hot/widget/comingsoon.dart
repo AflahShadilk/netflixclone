@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import 'package:netflixclone/domain/core/constants/constants.dart';
 import 'package:netflixclone/models/movie.dart';import 'package:intl/intl.dart';
 
@@ -87,13 +88,13 @@ Widget buildComingSoon(AsyncSnapshot<List<Movie>> snapshot) {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
+                          const Row(
 
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
 
                               Column(
-                                children: const [
+                                children: [
                                   Icon(Icons.alarm, color: Colors.white),
                                   Text(
                                     "Remind Me",
@@ -104,9 +105,9 @@ Widget buildComingSoon(AsyncSnapshot<List<Movie>> snapshot) {
                                   ),
                                 ],
                               ),
-                              const SizedBox(width: 10),
+                              SizedBox(width: 10),
                               Column(
-                                children: const [
+                                children: [
                                   Icon(Icons.info, color: Colors.white),
                                   Text(
                                     "Info",

@@ -10,11 +10,11 @@ class ScreenMainPage extends StatelessWidget {
    ScreenMainPage({super.key});
 
   final _pages = [
-    ScreenHome(),
-    ScreenNewHot(),
-    FastLaugh(),
-    ScreenSearch(),
-    ScreenDownload()
+    const ScreenHome(),
+    const ScreenNewHot(),
+    const FastLaugh(),
+    const ScreenSearch(),
+    const ScreenDownload()
   ];
 
 
@@ -28,7 +28,7 @@ class ScreenMainPage extends StatelessWidget {
           return _pages[index];
         }
       ),
-      bottomNavigationBar: BottomNavigationWidget(),
+      bottomNavigationBar: const BottomNavigationWidget(),
     );
   }
 }

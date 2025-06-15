@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:netflixclone/APIservice/api.dart';
 import 'package:netflixclone/domain/core/constants/constants.dart';

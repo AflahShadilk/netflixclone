@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:netflixclone/APIservice/api.dart';
+// ignore: unused_import
 import 'package:netflixclone/domain/core/constants/constants.dart';
 import 'package:netflixclone/models/movie.dart';
 import 'package:netflixclone/presentation/home/mainpart.dart';
@@ -18,7 +19,7 @@ class ScreenHome extends StatefulWidget {
 
 class _ScreenHomeState extends State<ScreenHome> {
   late Future<List<Movie>> trendingMovies;
-late Future<List<Movie>> nowPlaying;
+  late Future<List<Movie>> nowPlaying;
   late Future<List<Movie>> horrorPlaying;
   late Future<List<Movie>> malayalamMovies;
   late Future<List<Movie>> topTenMovies;
@@ -49,28 +50,44 @@ late Future<List<Movie>> nowPlaying;
                 children: [
                   ListView(
                     children: [
-                      mainPart(nowPlaying: nowPlaying,),
+                      mainPart(
+                        nowPlaying: nowPlaying,
+                      ),
                       SizedBox(
-                        child: FutureBuilder(future: nowPlaying, builder: (context, snapshot) {
-                          if(snapshot.hasError){
-                            return Center(child: Text(snapshot.error.toString()),);
-                          }
-                          else if(snapshot.hasData){
-                            final data = snapshot.data;
-                            return MainTitleCard(title: "Now Playing",snapshot:snapshot ,);
-                          }else{
-                            return SizedBox(child: Center(child: CircularProgressIndicator(),),);
-                          }
-                        },),
+                        child: FutureBuilder(
+                          future: nowPlaying,
+                          builder: (context, snapshot) {
+                            if (snapshot.hasError) {
+                              return Center(
+                                child: Text(snapshot.error.toString()),
+                              );
+                            } else if (snapshot.hasData) {
+                              final data = snapshot.data;
+                              return MainTitleCard(
+                                title: "Now Playing",
+                                snapshot: snapshot,
+                              );
+                            } else {
+                              return const SizedBox(
+                                child: Center(
+                                  child: CircularProgressIndicator(),
+                                ),
+                              );
+                            }
+                          },
+                        ),
                       ),
                       FutureBuilder<List<Movie>>(
                         future: trendingMovies,
                         builder: (context, snapshot) {
-                          if (snapshot.connectionState == ConnectionState.waiting) {
-                            return const Center(child: CircularProgressIndicator());
+                          if (snapshot.connectionState ==
+                              ConnectionState.waiting) {
+                            return const Center(
+                                child: CircularProgressIndicator());
                           }
                           if (snapshot.hasError) {
-                            return Center(child: Text(snapshot.error.toString()));
+                            return Center(
+                                child: Text(snapshot.error.toString()));
                           }
                           return MainTitleCard(
                             title: "Trending Now",
@@ -79,43 +96,76 @@ late Future<List<Movie>> nowPlaying;
                         },
                       ),
                       SizedBox(
-                        child: FutureBuilder(future: horrorPlaying, builder: (context, snapshot) {
-                          if(snapshot.hasError){
-                            return Center(child: Text(snapshot.error.toString()),);
-                          }
-                          else if(snapshot.hasData){
-                            final data = snapshot.data;
-                            return MainTitleCard(title: "Horror Movies",snapshot:snapshot ,);
-                          }else{
-                            return SizedBox(child: Center(child: CircularProgressIndicator(),),);
-                          }
-                        },),
+                        child: FutureBuilder(
+                          future: horrorPlaying,
+                          builder: (context, snapshot) {
+                            if (snapshot.hasError) {
+                              return Center(
+                                child: Text(snapshot.error.toString()),
+                              );
+                            } else if (snapshot.hasData) {
+                              final data = snapshot.data;
+                              return MainTitleCard(
+                                title: "Horror Movies",
+                                snapshot: snapshot,
+                              );
+                            } else {
+                              return const SizedBox(
+                                child: Center(
+                                  child: CircularProgressIndicator(),
+                                ),
+                              );
+                            }
+                          },
+                        ),
                       ),
                       SizedBox(
-                        child: FutureBuilder(future: topTenMovies, builder: (context, snapshot) {
-                          if(snapshot.hasError){
-                            return Center(child: Text(snapshot.error.toString()),);
-                          }
-                          else if(snapshot.hasData){
-                            final data = snapshot.data;
-                            return MainTitleCardCustom(title: "Top 10 Movie",snapshot:snapshot ,);
-                          }else{
-                            return SizedBox(child: Center(child: CircularProgressIndicator(),),);
-                          }
-                        },),
+                        child: FutureBuilder(
+                          future: topTenMovies,
+                          builder: (context, snapshot) {
+                            if (snapshot.hasError) {
+                              return Center(
+                                child: Text(snapshot.error.toString()),
+                              );
+                            } else if (snapshot.hasData) {
+                              final data = snapshot.data;
+                              return MainTitleCardCustom(
+                                title: "Top 10 Movie",
+                                snapshot: snapshot,
+                              );
+                            } else {
+                              return const SizedBox(
+                                child: Center(
+                                  child: CircularProgressIndicator(),
+                                ),
+                              );
+                            }
+                          },
+                        ),
                       ),
                       SizedBox(
-                        child: FutureBuilder(future: malayalamMovies, builder: (context, snapshot) {
-                          if(snapshot.hasError){
-                            return Center(child: Text(snapshot.error.toString()),);
-                          }
-                          else if(snapshot.hasData){
-                            final data = snapshot.data;
-                            return MainTitleCard(title: "Malayalam Mashup",snapshot:snapshot ,);
-                          }else{
-                            return SizedBox(child: Center(child: CircularProgressIndicator(),),);
-                          }
-                        },),
+                        child: FutureBuilder(
+                          future: malayalamMovies,
+                          builder: (context, snapshot) {
+                            if (snapshot.hasError) {
+                              return Center(
+                                child: Text(snapshot.error.toString()),
+                              );
+                            } else if (snapshot.hasData) {
+                              final data = snapshot.data;
+                              return MainTitleCard(
+                                title: "Malayalam Mashup",
+                                snapshot: snapshot,
+                              );
+                            } else {
+                              return const SizedBox(
+                                child: Center(
+                                  child: CircularProgressIndicator(),
+                                ),
+                              );
+                            }
+                          },
+                        ),
                       ),
                     ],
                   ),
@@ -135,8 +185,8 @@ late Future<List<Movie>> nowPlaying;
                                 height: 70,
                                 width: 70,
                               ),
-                              Row(
-                                children: const [
+                              const Row(
+                                children: [
                                   Icon(Icons.cast, color: Colors.white),
                                   SizedBox(width: 10),
                                   CircleAvatar(
@@ -148,12 +198,15 @@ late Future<List<Movie>> nowPlaying;
                             ],
                           ),
                           const SizedBox(height: 10),
-                          Row(
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: const [
-                              Text("TV Shows", style: TextStyle(color: Colors.white)),
-                              Text("Movies", style: TextStyle(color: Colors.white)),
-                              Text("Categories", style: TextStyle(color: Colors.white)),
+                            children: [
+                              Text("TV Shows",
+                                  style: TextStyle(color: Colors.white)),
+                              Text("Movies",
+                                  style: TextStyle(color: Colors.white)),
+                              Text("Categories",
+                                  style: TextStyle(color: Colors.white)),
                             ],
                           ),
                         ],

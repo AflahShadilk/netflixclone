@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:netflixclone/APIservice/api.dart';
-import 'package:netflixclone/domain/core/constants/constants.dart';
 import 'package:netflixclone/models/movie.dart';
 import 'package:netflixclone/presentation/new_and_hot/widget/comingsoon.dart';
 import 'package:netflixclone/presentation/new_and_hot/widget/trendingnow.dart';
@@ -20,7 +19,7 @@ late Future<List<Movie>> comingSoon;
   void initState() {
     trendingNow = Api().getTrendingMovies();
     comingSoon = Api().getComingSoonMovies();
-  // TODO: implement initState
+
     super.initState();
   }
 
@@ -54,7 +53,7 @@ late Future<List<Movie>> comingSoon;
           ],
           bottom: TabBar(
             isScrollable: true, // Allow custom tab widths
-            indicator: BoxDecoration(
+            indicator: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(Radius.circular(50)),
             ),
@@ -110,7 +109,7 @@ late Future<List<Movie>> comingSoon;
     );
   }
 
-  Widget _buildTrendingNow(String s) {
+  Widget _BuildTrendingNow(String s) {
     return ListView.builder(
       itemCount: 10,
       itemBuilder: (context, index) {

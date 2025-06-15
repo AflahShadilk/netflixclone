@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.montserrat().fontFamily,
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor:backgroundColor,
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           bodyMedium: TextStyle(
             color: Colors.white
 

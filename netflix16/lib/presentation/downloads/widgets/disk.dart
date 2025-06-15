@@ -51,11 +51,12 @@ class _DiskState extends State<Disk> {
                 // Background Circle
                 CircleAvatar(
                   radius: size.width * 0.35,
+                  // ignore: deprecated_member_use
                   backgroundColor: Colors.grey.withOpacity(0.6), // Add color for better visibility
                 ),
                 // Left Image
                 Transform.translate(
-                  offset: Offset(-90, 0),
+                  offset: const Offset(-90, 0),
                   child: Transform.rotate(
                     angle: -15 * pi / 180, // Slight left tilt
                     child: Container(
@@ -73,7 +74,7 @@ class _DiskState extends State<Disk> {
                 ),
                 // Right Image
                 Transform.translate(
-                  offset: Offset(90, 0),
+                  offset: const Offset(90, 0),
                   child: Transform.rotate(
                     angle: 15 * pi / 180, // Slight right tilt
                     child: Container(
@@ -91,7 +92,7 @@ class _DiskState extends State<Disk> {
                 ),
                 // Center Image
                 Transform.translate(
-                  offset: Offset(0, 0),
+                  offset: const Offset(0, 0),
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),

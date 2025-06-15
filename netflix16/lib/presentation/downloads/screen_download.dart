@@ -10,9 +10,11 @@ class ScreenDownload extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: PreferredSize(
+      appBar: const PreferredSize(
+        // ignore: sort_child_properties_last
         child: AppBarWidget(
           title: "Downloads",
         ),
@@ -21,7 +23,7 @@ class ScreenDownload extends StatelessWidget {
       body: ListView(
         children: [
           kHeight,
-          _smartDownloads(),
+          const _SmartDownloads(),
           kHeight,
           kHeight,
           Text("Introducing Downloads for you",
@@ -34,7 +36,7 @@ class ScreenDownload extends StatelessWidget {
           ),
           ),
           kHeight,
-          Padding(
+          const Padding(
             padding:  EdgeInsets.all(8.0),
             child: Text(
               textAlign: TextAlign.center,
@@ -45,7 +47,7 @@ class ScreenDownload extends StatelessWidget {
             ),
           ),
           kHeight,
-          Disk(),
+          const Disk(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: ElevatedButton(
@@ -77,7 +79,7 @@ class ScreenDownload extends StatelessWidget {
 
                 ),
                 onPressed: () {},
-                child: Text("See what you can dowload",
+                child: const Text("See what you can dowload",
                   style: TextStyle(
 
                       fontSize: 16,
@@ -91,14 +93,14 @@ class ScreenDownload extends StatelessWidget {
   }
 }
 
-class _smartDownloads extends StatelessWidget {
-  const _smartDownloads({
+class _SmartDownloads extends StatelessWidget {
+  const _SmartDownloads({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       children: [
         Icon(
           Icons.settings,

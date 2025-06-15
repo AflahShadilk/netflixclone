@@ -53,11 +53,11 @@ Widget buildTrendingNow(AsyncSnapshot<List<Movie>> snapshot) {
                 ],
               ),
               const SizedBox(height: 10),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Column(
-                    children: const [
+                    children: [
                       Icon(Icons.share, color: Colors.white),
                       Text(
                         "Share",
@@ -67,7 +67,7 @@ Widget buildTrendingNow(AsyncSnapshot<List<Movie>> snapshot) {
                   ),
                   kWidth,
                   Column(
-                    children: const [
+                    children: [
                       Icon(Icons.add, color: Colors.white),
                       Text(
                         "Add",
@@ -77,7 +77,7 @@ Widget buildTrendingNow(AsyncSnapshot<List<Movie>> snapshot) {
                   ),
                   kWidth,
                   Column(
-                    children: const [
+                    children: [
                       Icon(Icons.play_arrow, color: Colors.white),
                       Text(
                         "Play",

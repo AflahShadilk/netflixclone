@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:netflixclone/domain/core/constants/constants.dart';
 import 'package:netflixclone/models/movie.dart';
+
+// ignore: camel_case_types
 class mainPart extends StatelessWidget {
   final Future<List<Movie>> nowPlaying;
 
@@ -42,7 +44,7 @@ class mainPart extends StatelessWidget {
                 ),
               ),
               // Add your buttons or other content
-              homebuttons(),
+              const Homebuttons(),
             ],
           );
         }
@@ -54,8 +56,8 @@ class mainPart extends StatelessWidget {
     );
   }
 }
-class homebuttons extends StatelessWidget {
-  const homebuttons({
+class Homebuttons extends StatelessWidget {
+  const Homebuttons({
     super.key,
   });
 
@@ -72,14 +74,15 @@ class homebuttons extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
           children: [
-            mainPartButton(icon: Icons.add,title: "My List",),
+            const mainPartButton(icon: Icons.add,title: "My List",),
             TextButton.icon(
               style: ButtonStyle(
+                // ignore: deprecated_member_use
                 backgroundColor: MaterialStateProperty.all(Colors.white),
                 shape: WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))),
               ),
-              onPressed: (){}, icon: Icon(Icons.play_arrow),label: Text("Play",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w800,),),),
-            mainPartButton(icon: Icons.info_outline,title: "Info",),
+              onPressed: (){}, icon: const Icon(Icons.play_arrow),label: const Text("Play",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w800,),),),
+            const mainPartButton(icon: Icons.info_outline,title: "Info",),
 
 
 

@@ -19,8 +19,8 @@ class AppBarWidget extends StatelessWidget {
             fontWeight: FontWeight.w700
           ),
           ),
-          Spacer(),
-          Icon(Icons.cast,color: Colors.white,),
+          const Spacer(),
+          const Icon(Icons.cast,color: Colors.white,),
           kWidth,
           Container(color: Colors.blue,
           height: 30,

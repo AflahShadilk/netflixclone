@@ -63,7 +63,7 @@ class VideoActionsWidget extends StatelessWidget {
       child: Column(
         children: [
           Icon(icon,color: Colors.white,shadows: [Shadow(color: Colors.black,blurRadius: 1)],),
-          Text(data,style: TextStyle(
+          Text(data,style: const TextStyle(
             letterSpacing: 1,
             color: Colors.white,
           ),),
